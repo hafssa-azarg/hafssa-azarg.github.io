@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hafssa Azarg – Ingénieure cybersécurité OT/ICS & SOC</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg:#eef1f3;--surface:#fff;--ink:#12263a;--muted:#55677a;--line:#c9d3db;--sig:#f2b705;--sigink:#12263a;--alert:#b3261e;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a26;--surface:#16263a;--ink:#e8eef4;--muted:#9fb0c1;--line:#2a3d52;--alert:#ff8a80;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1a26;--surface:#16263a;--ink:#e8eef4;--muted:#9fb0c1;--line:#2a3d52;--alert:#ff8a80;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.6 "Archivo",system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sig);outline-offset:3px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+.nav .wrap{display:flex;gap:1.25rem;align-items:center;justify-content:space-between;padding-top:.7rem;padding-bottom:.7rem;flex-wrap:wrap}
+.nav b{font-weight:800;font-stretch:125%;letter-spacing:.02em}
+.nav nav{display:flex;gap:1rem;flex-wrap:wrap;font-size:.95rem}
+.nav nav a{text-decoration:none;color:var(--muted)}
+.nav nav a:hover{color:var(--ink)}
+section{padding:3.5rem 0;border-bottom:1px solid var(--line)}
+h1{font-stretch:125%;font-weight:800;font-size:clamp(2.4rem,7vw,4.6rem);line-height:1;margin:0 0 1rem;letter-spacing:-.01em}
+h2{font-stretch:112%;font-weight:700;font-size:1.7rem;margin:0 0 1.5rem}
+h3{margin:0;font-size:1.15rem;font-weight:700}
+.lead{font-size:1.2rem;max-width:40rem;color:var(--muted);margin:0 0 1.5rem}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.7rem 1.2rem;border:2px solid var(--ink);text-decoration:none;font-weight:600}
+.btn.p{background:var(--sig);color:var(--sigink);border-color:var(--sig)}
+.btn:hover{transform:translateY(-2px)}
+.hero{display:grid;gap:2rem;grid-template-columns:1.1fr 1fr;align-items:center}
+@media(max-width:52rem){.hero{grid-template-columns:1fr}}
+/* memorable element: decoded Modbus frame + detection */
+.pkt{background:var(--ink);color:#e8eef4;font:400 .82rem/1.55 "IBM Plex Mono",ui-monospace,monospace;padding:1rem;border-left:6px solid var(--sig);overflow-x:auto}
+:root[data-theme="dark"] .pkt,:root:not([data-theme="light"]) .pkt{--x:1}
+.pkt .t{color:#9fb0c1}
+.pkt .row{display:flex;gap:.6rem;white-space:nowrap;padding:.1rem .3rem;cursor:default}
+.pkt .row:hover{background:#243a52}
+.pkt .k{width:8.2rem;color:#9fb0c1;flex:none}
+.pkt .bad{color:#ffd24d}
+.pkt .alert{margin-top:.8rem;padding:.6rem;background:#3a1d1d;border:1px solid #ff8a80;color:#ffb4ab;white-space:normal}
+.pkt .ok{margin-top:.5rem;color:#8fe3a8}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:2rem}
+.facts div{background:var(--surface);padding:1rem}
+.facts b{display:block}
+.facts span{color:var(--muted);font-size:.92rem}
+.tl{border-left:3px solid var(--ink);padding-left:1.25rem;margin-left:.3rem}
+.tl article{margin-bottom:1.75rem;position:relative}
+.tl article::before{content:"";position:absolute;left:-1.7rem;top:.5rem;width:.7rem;height:.7rem;background:var(--sig);border:2px solid var(--ink)}
+.meta{color:var(--muted);font-size:.95rem;margin:.1rem 0 .5rem}
+ul.pl{margin:.3rem 0 0;padding-left:1.1rem}
+ul.pl li{margin-bottom:.3rem;max-width:44rem}
+.tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.tabs button{font:inherit;background:transparent;color:var(--ink);border:2px solid var(--line);padding:.4rem .9rem;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.proj{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--ink);padding:1.1rem 1.25rem;margin-bottom:1rem}
+.proj[hidden]{display:none}
+.proj[data-c~="ot"]{border-left-color:var(--sig)}
+.tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.7rem}
+.tags span{font:500 .78rem "IBM Plex Mono",monospace;border:1px solid var(--line);padding:.1rem .45rem;color:var(--muted)}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.5rem 2rem}
+.skills h3{font-size:1rem;margin-bottom:.3rem}
+.skills p{margin:0;color:var(--muted)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+@media(max-width:52rem){.two{grid-template-columns:1fr}}
+.two ul{list-style:none;padding:0;margin:0}
+.two li{padding:.5rem 0;border-bottom:1px solid var(--line)}
+.two li span{display:block;color:var(--muted);font-size:.92rem}
+footer{padding:3rem 0 4rem}
+footer .big{font-size:clamp(1.3rem,4vw,2rem);font-weight:700;font-stretch:112%;word-break:break-word}
+.theme{background:none;border:2px solid var(--line);color:var(--ink);font:inherit;padding:.25rem .7rem;cursor:pointer}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+<b>Hafssa Azarg</b>
+<nav aria-label="Navigation principale"><a href="#parcours">Parcours</a><a href="#projets">Projets</a><a href="#competences">Compétences</a><a href="#formation">Formation</a><a href="#contact">Contact</a></nav>
+<button class="theme" id="theme" type="button" aria-label="Changer de thème">Thème</button>
+</div></header>
+
+<main>
+<section id="top"><div class="wrap">
+<div class="hero">
+<div>
+<h1>Hafssa Azarg</h1>
+<p class="lead">Élève ingénieure en cybersécurité à l’EMSI Marrakech. Je protège les systèmes industriels (OT/ICS) et je détecte les intrusions en SOC.</p>
+<div class="btns"><a class="btn p" href="mailto:azarg.hafssahe@gmail.com">M’écrire</a><a class="btn" href="https://github.com/hafssa799" target="_blank" rel="noopener">GitHub</a><a class="btn" href="https://linkedin.com/in/hafssa-azarg-138454320" target="_blank" rel="noopener">LinkedIn</a></div>
+<p class="meta" style="margin-top:1.2rem">Recherche un stage PFE en cybersécurité.</p>
+</div>
+<div class="pkt" role="img" aria-label="Exemple de trame Modbus TCP malveillante détectée par une règle Suricata">
+<div class="t">Capture · réseau SCADA/PLC (GRFICSv3)</div>
+<div class="row"><span class="k">Protocole</span>Modbus/TCP</div>
+<div class="row"><span class="k">Source</span>hôte inconnu (MitM)</div>
+<div class="row"><span class="k">Fonction</span><span class="bad">0x06 Write Single Register</span></div>
+<div class="row"><span class="k">Valeur</span><span class="bad">consigne modifiée</span></div>
+<div class="alert">Alerte Suricata : ordre Modbus non autorisé. Transmise à Wazuh pour analyse en temps réel.</div>
+<div class="ok">Attaque simulée, détectée, documentée.</div>
+</div>
+</div>
+<div class="facts">
+<div><b>Sécurité OT/ICS</b><span>SCADA, PLC, Modbus TCP</span></div>
+<div><b>Détection & SOC</b><span>Suricata, Wazuh, TheHive</span></div>
+<div><b>Audit offensif</b><span>OWASP Top 10, Burp Suite</span></div>
+<div><b>Stage au Groupe OCP</b><span>Khouribga, 2025 et 2026</span></div>
+</div>
+</div></section>
+
+<section id="parcours"><div class="wrap">
+<h2>Parcours</h2>
+<div class="tl">
+<article>
+<h3>Stagiaire PFA, cybersécurité des systèmes OT/ICS</h3>
+<p class="meta">Groupe OCP, Khouribga · 2026 (2 mois)</p>
+<ul class="pl">
+<li>Conception et déploiement d’une plateforme de cybersécurité OT/ICS basée sur GRFICSv3 (réseau SCADA/PLC).</li>
+<li>Audit du réseau OT : analyse du trafic Modbus TCP avec Wireshark, cartographie avec Nmap, détection de vulnérabilités.</li>
+<li>Simulation d’attaques (MitM, injection d’ordres Modbus), puis déploiement de règles Suricata et Wazuh pour la détection en temps réel.</li>
+</ul>
+</article>
+<article>
+<h3>Stagiaire PFE, développement informatique</h3>
+<p class="meta">Groupe OCP, Khouribga · 2025</p>
+<ul class="pl">
+<li>Système de gestion des interventions pour le suivi des interventions techniques.</li>
+<li>Application de suivi des enfants à besoins spécifiques (EBS), avec suivi opérationnel et social.</li>
+</ul>
+</article>
+</div>
+</div></section>
+
+<section id="projets"><div class="wrap">
+<h2>Projets académiques</h2>
+<div class="tabs" role="group" aria-label="Filtrer les projets">
+<button type="button" data-f="all" aria-pressed="true">Tous</button>
+<button type="button" data-f="ot" aria-pressed="false">OT/ICS</button>
+<button type="button" data-f="soc" aria-pressed="false">SOC & détection</button>
+<button type="button" data-f="mob" aria-pressed="false">Mobile</button>
+<button type="button" data-f="web" aria-pressed="false">Web & architecture</button>
+</div>
+
+<article class="proj" data-c="ot soc">
+<h3>Plateforme de cybersécurité OT/ICS</h3>
+<p class="meta">Stage PFA, Groupe OCP</p>
+<p>Réseau SCADA/PLC simulé sur GRFICSv3. J’y ai audité le trafic, simulé des attaques MitM et des injections d’ordres Modbus, puis écrit les règles de détection.</p>
+<div class="tags"><span>GRFICSv3</span><span>Modbus TCP</span><span>Suricata</span><span>Wazuh</span><span>Wireshark</span><span>Nmap</span></div>
+</article>
+<article class="proj" data-c="soc">
+<h3>SOC : gestion d’incidents et Threat Intelligence</h3>
+<p class="meta">Environnement virtualisé</p>
+<p>Déploiement de TheHive et Cortex avec Docker Compose. Les IOC (IP, domaines, hash MD5) sont enrichis automatiquement via WHOIS Lookup.</p>
+<div class="tags"><span>TheHive</span><span>Cortex</span><span>Docker Compose</span><span>WHOIS</span></div>
+</article>
+<article class="proj" data-c="soc">
+<h3>UEBA : détection d’anomalies comportementales</h3>
+<p class="meta">UEBA / SOC</p>
+<p>Modèle du comportement normal des utilisateurs et des entités, construit à partir des journaux, pour repérer les écarts. Analyse des alertes pour identifier les comportements à risque.</p>
+<div class="tags"><span>UEBA</span><span>Analyse de journaux</span><span>Alertes</span></div>
+</article>
+<article class="proj" data-c="mob">
+<h3>Sécurité des applications mobiles : rétro-ingénierie et analyse dynamique</h3>
+<p class="meta">Android</p>
+<p>Décompilation et analyse statique avec JADX et Ghidra pour trouver des failles. Instrumentation à l’exécution avec Frida pour observer le comportement des applications.</p>
+<div class="tags"><span>JADX</span><span>Ghidra</span><span>Frida</span></div>
+</article>
+<article class="proj" data-c="mob">
+<h3>DIRS Security Suite</h3>
+<p class="meta">Sécurité mobile</p>
+<p>Analyse statique d’APK Android (permissions, composants, comportements à risque) et scoring de risque qui classe les applications selon leur niveau de dangerosité.</p>
+<div class="tags"><span>APK</span><span>Analyse statique</span><span>Scoring de risque</span></div>
+</article>
+<article class="proj" data-c="web">
+<h3>Audit de sécurité OWASP Juice Shop</h3>
+<p class="meta">OWASP Top 10</p>
+<p>Test et exploitation de vulnérabilités (injections, authentification, contrôle d’accès) avec Burp Suite. Rapport d’audit avec recommandations de remédiation priorisées.</p>
+<div class="tags"><span>OWASP Top 10</span><span>Burp Suite</span><span>Rapport d’audit</span></div>
+</article>
+<article class="proj" data-c="web">
+<h3>MediChain AI : dossiers médicaux sur blockchain</h3>
+<p class="meta">Gestion agile</p>
+<p>Pilotage du projet en méthode agile (cadrage, planification) et conception de l’architecture blockchain qui sécurise les dossiers médicaux.</p>
+<div class="tags"><span>Blockchain</span><span>Agile</span><span>Architecture</span></div>
+</article>
+<p><a href="https://github.com/hafssa799" target="_blank" rel="noopener">Voir le code et les dépôts sur GitHub</a></p>
+</div></section>
+
+<section id="competences"><div class="wrap">
+<h2>Compétences techniques</h2>
+<div class="skills">
+<div><h3>Audit et pentest</h3><p>OWASP Top 10, analyse de vulnérabilités, tests d’intrusion (bases), Burp Suite, Nmap</p></div>
+<div><h3>Détection et SOC</h3><p>Suricata (IDS/IPS), Wazuh (SIEM/XDR), TheHive, Cortex, Wireshark</p></div>
+<div><h3>Sécurité OT/ICS</h3><p>SCADA/PLC, Modbus TCP, GRFICSv3, simulation d’attaques (MitM, injection d’ordres)</p></div>
+<div><h3>Sécurité mobile</h3><p>Analyse statique d’APK, scoring de risque, développement Android (Java, Android Studio)</p></div>
+<div><h3>Développement</h3><p>Python, C, Java, JavaScript, PHP, React, HTML/CSS, SQL, UML</p></div>
+<div><h3>Systèmes et DevOps</h3><p>Linux, Windows, Docker, Git</p></div>
+</div>
+</div></section>
+
+<section id="formation"><div class="wrap">
+<div class="two">
+<div>
+<h2>Formation</h2>
+<ul>
+<li><b>Cycle ingénieur Informatique & Réseaux, spécialité Cybersécurité</b><span>EMSI, Marrakech · 2025 – présent (5<sup>e</sup> année)</span></li>
+<li><b>Licence en Informatique</b><span>FST Béni Mellal · 2024 – 2025</span></li>
+<li><b>DEUST MIPC</b><span>FST Béni Mellal · 2021 – 2024</span></li>
+<li><b>Baccalauréat Sciences Physiques</b><span>Lycée Maghreb Al Kabeer, Khouribga · 2021</span></li>
+</ul>
+</div>
+<div>
+<h2>Certifications et langues</h2>
+<ul>
+<li>KASBAH : gestion de crise cyber (Cellule 2, Risque/Conformité)</li>
+<li>Sécurité des applications mobiles</li>
+<li>Programmation mobile : Android avec Java</li>
+<li>Agile Project Management</li>
+<li>Fundamentals of Blockchain Architecture</li>
+<li>Introduction to Machine Learning · Introduction to NoSQL Databases</li>
+<li><b>Langues</b><span>Arabe : langue maternelle · Français : courant · Anglais : intermédiaire</span></li>
+</ul>
+</div>
+</div>
+</div></section>
+</main>
+
+<footer id="contact"><div class="wrap">
+<h2>Contact</h2>
+<p class="lead">Je cherche un stage PFE en cybersécurité. Écrivez-moi pour échanger sur un projet ou une opportunité.</p>
+<p class="big"><a href="mailto:azarg.hafssahe@gmail.com">azarg.hafssahe@gmail.com</a></p>
+<div class="btns">
+<a class="btn" href="https://linkedin.com/in/hafssa-azarg-138454320" target="_blank" rel="noopener">LinkedIn</a>
+<a class="btn" href="https://github.com/hafssa799" target="_blank" rel="noopener">GitHub</a>
+</div>
+</div></footer>
+
+<script>
+(function(){
+var btns=document.querySelectorAll('.tabs button'),items=document.querySelectorAll('.proj');
+btns.forEach(function(b){b.addEventListener('click',function(){
+var f=b.dataset.f;
+btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+items.forEach(function(p){p.hidden=!(f==='all'||(' '+p.dataset.c+' ').indexOf(' '+f+' ')>-1)});
+})});
+var t=document.getElementById('theme'),r=document.documentElement;
+t.addEventListener('click',function(){
+var dark=r.getAttribute('data-theme')?r.getAttribute('data-theme')==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;
+r.setAttribute('data-theme',dark?'light':'dark');
+});
+})();
+</script>
+</body>
+</html>
