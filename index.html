@@ -1,1 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="theme-color" content="#0a0f14">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hafssa Azarg – Ingénieure cybersécurité OT/ICS & SOC</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="icon" href="favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav"><div class="wrap">
+<b>Hafssa Azarg</b>
+<nav id="menu" aria-label="Navigation principale"><a href="#parcours">Parcours</a><a href="#projets">Projets</a><a href="#competences">Compétences</a><a href="#formation">Formation</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a></nav>
+<button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">Menu</button>
+</div></header>
 
+<main>
+<section id="top"><div class="wrap">
+<div class="hero">
+<div>
+<p class="prompt">hafssa@emsi:~$ whoami</p>
+<img class="pfp" src="pfp.png" alt="Portrait de Hafssa Azarg" width="112" height="112" onerror="this.remove()">
+<h1>Hafssa Azarg</h1>
+<p class="lead">Élève ingénieure en cybersécurité à l’EMSI Marrakech. Je protège les systèmes industriels (OT/ICS) et je détecte les intrusions en SOC.</p>
+<div class="btns"><a class="btn p" href="#contact">Me contacter</a><a class="btn" href="CV_Hafssa_Azarg.pdf" download>Télécharger le CV</a><a class="btn" href="https://github.com/hafssa799" target="_blank" rel="noopener">GitHub</a><a class="btn" href="https://linkedin.com/in/hafssa-azarg-138454320" target="_blank" rel="noopener">LinkedIn</a></div>
+<p class="meta" style="margin-top:1.2rem">Recherche un stage PFE en cybersécurité.</p>
+</div>
+<div class="pkt" role="img" aria-label="Exemple de trame Modbus TCP malveillante détectée par une règle Suricata">
+<div class="bar"><i></i><i></i><i></i><span>scada-lab ~ suricata.log</span></div>
+<div class="t">Capture · réseau SCADA/PLC (GRFICSv3)</div>
+<div class="row"><span class="k">Protocole</span>Modbus/TCP</div>
+<div class="row"><span class="k">Source</span>hôte inconnu (MitM)</div>
+<div class="row"><span class="k">Fonction</span><span class="bad">0x06 Write Single Register</span></div>
+<div class="row"><span class="k">Valeur</span><span class="bad">consigne modifiée</span></div>
+<div class="alert">Alerte Suricata : ordre Modbus non autorisé. Transmise à Wazuh pour analyse en temps réel.</div>
+<div class="ok">Attaque simulée, détectée, documentée.</div>
+</div>
+</div>
+<div class="facts">
+<div><b>Sécurité OT/ICS</b><span>SCADA, PLC, Modbus TCP</span></div>
+<div><b>Détection & SOC</b><span>Suricata, Wazuh, TheHive</span></div>
+<div><b>Audit offensif</b><span>OWASP Top 10, Burp Suite</span></div>
+<div><b>Stage au Groupe OCP</b><span>Khouribga, 2025 et 2026</span></div>
+</div>
+</div></section>
+
+<section id="parcours"><div class="wrap">
+<h2>Parcours</h2>
+<div class="tl">
+<article>
+<h3>Stagiaire PFA, cybersécurité des systèmes OT/ICS</h3>
+<p class="meta">Groupe OCP, Khouribga · 2026 (2 mois)</p>
+<ul class="pl">
+<li>Conception et déploiement d’une plateforme de cybersécurité OT/ICS basée sur GRFICSv3 (réseau SCADA/PLC).</li>
+<li>Audit du réseau OT : analyse du trafic Modbus TCP avec Wireshark, cartographie avec Nmap, détection de vulnérabilités.</li>
+<li>Simulation d’attaques (MitM, injection d’ordres Modbus), puis déploiement de règles Suricata et Wazuh pour la détection en temps réel.</li>
+</ul>
+</article>
+<article>
+<h3>Stagiaire PFE, développement informatique</h3>
+<p class="meta">Groupe OCP, Khouribga · 2025</p>
+<ul class="pl">
+<li>Système de gestion des interventions pour le suivi des interventions techniques.</li>
+<li>Application de suivi des enfants à besoins spécifiques (EBS), avec suivi opérationnel et social.</li>
+</ul>
+</article>
+</div>
+</div></section>
+
+<section id="projets"><div class="wrap">
+<h2>Projets académiques</h2>
+<div class="tabs" role="group" aria-label="Filtrer les projets">
+<button type="button" data-f="all" aria-pressed="true">Tous</button>
+<button type="button" data-f="ot" aria-pressed="false">OT/ICS</button>
+<button type="button" data-f="soc" aria-pressed="false">SOC & détection</button>
+<button type="button" data-f="mob" aria-pressed="false">Mobile</button>
+<button type="button" data-f="web" aria-pressed="false">Web & architecture</button>
+</div>
+
+<article class="proj" data-c="ot soc"><div class="pm"><p class="meta">Stage PFA · Groupe OCP, 2026</p><div class="tags"><span>GRFICSv3</span><span>Modbus TCP</span><span>Suricata</span><span>Wazuh</span><span>Wireshark</span><span>Nmap</span></div></div><div class="pb"><h3>Plateforme de cybersécurité OT/ICS</h3><ul class="pl"><li>Conçu et déployé une plateforme de cybersécurité pour systèmes OT/ICS basée sur GRFICSv3 (réseau SCADA/PLC).</li><li>Audité le réseau OT : analyse du trafic Modbus TCP, cartographie et détection de vulnérabilités.</li><li>Simulé des attaques (MitM, injection d’ordres Modbus) puis déployé des règles Suricata/Wazuh pour la détection en temps réel.</li></ul></div></article>
+<article class="proj" data-c="soc"><div class="pm"><p class="meta">Projet EMSI · environnement virtualisé</p><div class="tags"><span>TheHive</span><span>Cortex</span><span>Docker Compose</span><span>WHOIS</span></div></div><div class="pb"><h3>SOC : gestion d’incidents et Threat Intelligence</h3><ul class="pl"><li>Déployé TheHive et Cortex sous Docker Compose.</li><li>Enrichi automatiquement les IOC (IP, domaines, hash MD5) via WHOIS Lookup.</li></ul></div></article>
+<article class="proj" data-c="soc"><div class="pm"><p class="meta">Projet EMSI · UEBA / SOC</p><div class="tags"><span>UEBA</span><span>Journaux</span><span>Alertes</span></div></div><div class="pb"><h3>UEBA : détection d’anomalies comportementales</h3><ul class="pl"><li>Conçu une solution UEBA pour modéliser le comportement normal des utilisateurs et des entités et détecter les écarts à partir des journaux.</li><li>Analysé les alertes générées pour identifier les comportements à risque et les activités suspectes.</li></ul></div></article>
+<article class="proj" data-c="mob"><div class="pm"><p class="meta">Projet EMSI · Android</p><div class="tags"><span>JADX</span><span>Ghidra</span><span>Frida</span></div></div><div class="pb"><h3>Sécurité des applications mobiles : rétro-ingénierie et analyse dynamique</h3><ul class="pl"><li>Réalisé la décompilation et l’analyse statique d’applications Android avec JADX et Ghidra pour identifier les failles potentielles.</li><li>Instrumenté les applications à l’exécution avec Frida pour observer leur comportement.</li></ul></div></article>
+<article class="proj" data-c="mob"><div class="pm"><p class="meta">Projet EMSI · sécurité mobile</p><div class="tags"><span>APK</span><span>Analyse statique</span><span>Scoring de risque</span></div></div><div class="pb"><h3>DIRS Security Suite : analyse de sécurité des applications Android</h3><ul class="pl"><li>Réalisé l’analyse statique d’APK Android (permissions, composants, comportements à risque) pour identifier les failles potentielles.</li><li>Conçu un scoring de risque classant les applications selon leur niveau de dangerosité.</li></ul></div></article>
+<article class="proj" data-c="web"><div class="pm"><p class="meta">Projet EMSI · OWASP Top 10</p><div class="tags"><span>OWASP Top 10</span><span>Burp Suite</span></div></div><div class="pb"><h3>Audit de sécurité OWASP Juice Shop</h3><ul class="pl"><li>Testé et exploité les vulnérabilités OWASP Top 10 (injections, authentification, contrôle d’accès) avec Burp Suite.</li><li>Rédigé un rapport d’audit avec des recommandations de remédiation priorisées.</li></ul></div></article>
+<article class="proj" data-c="web"><div class="pm"><p class="meta">Projet EMSI · gestion agile</p><div class="tags"><span>Blockchain</span><span>Agile</span></div></div><div class="pb"><h3>MediChain AI : dossiers médicaux sur blockchain</h3><ul class="pl"><li>Piloté le projet en méthode agile (cadrage, planification) et conçu l’architecture blockchain pour sécuriser les dossiers médicaux.</li></ul></div></article>
+<p><a href="https://github.com/hafssa799" target="_blank" rel="noopener">Voir le code et les dépôts sur GitHub</a></p>
+</div></section>
+
+<section id="competences"><div class="wrap">
+<h2>Compétences techniques</h2>
+<div class="skills">
+<div><h3>Audit et pentest</h3><p>OWASP Top 10, analyse de vulnérabilités, tests d’intrusion (bases), Burp Suite, Nmap</p></div>
+<div><h3>Détection et SOC</h3><p>Suricata (IDS/IPS), Wazuh (SIEM/XDR), TheHive, Cortex, Wireshark</p></div>
+<div><h3>Sécurité OT/ICS</h3><p>SCADA/PLC, Modbus TCP, GRFICSv3, simulation d’attaques (MitM, injection d’ordres)</p></div>
+<div><h3>Sécurité mobile</h3><p>Analyse statique d’APK, scoring de risque, développement Android (Java, Android Studio)</p></div>
+<div><h3>Développement</h3><p>Python, C, Java, JavaScript, PHP, React, HTML/CSS, SQL, UML</p></div>
+<div><h3>Systèmes et DevOps</h3><p>Linux, Windows, Docker, Git</p></div>
+</div>
+</div></section>
+
+<section id="formation"><div class="wrap">
+<div class="two">
+<div>
+<h2>Formation</h2>
+<ul>
+<li><b>Cycle ingénieur Informatique & Réseaux, spécialité Cybersécurité</b><span>EMSI, Marrakech · 2025 – présent (5<sup>e</sup> année)</span></li>
+<li><b>Licence en Informatique</b><span>FST Béni Mellal · 2024 – 2025</span></li>
+<li><b>DEUST MIPC</b><span>FST Béni Mellal · 2021 – 2024</span></li>
+<li><b>Baccalauréat Sciences Physiques</b><span>Lycée Maghreb Al Kabeer, Khouribga · 2021</span></li>
+</ul>
+</div>
+<div>
+<h2>Langues</h2>
+<ul><li><b>Arabe</b><span>Langue maternelle</span></li><li><b>Français</b><span>Courant</span></li><li><b>Anglais</b><span>Intermédiaire</span></li></ul>
+</div>
+</div>
+</div></section>
+<section id="certifications"><div class="wrap"><h2>Certifications</h2><div class="certs"><div class="cert s"><p>Cybersécurité</p><b>KASBAH : gestion de crise cyber (Cellule 2, Risque/Conformité)</b></div><div class="cert s"><p>Cybersécurité</p><b>Sécurité des applications mobiles</b></div><div class="cert "><p>Développement</p><b>Programmation mobile : Android avec Java</b></div><div class="cert "><p>Gestion de projet</p><b>Agile Project Management</b></div><div class="cert "><p>Architecture</p><b>Fundamentals of Blockchain Architecture</b></div><div class="cert "><p>Data</p><b>Introduction to Machine Learning</b></div><div class="cert "><p>Data</p><b>Introduction to NoSQL Databases</b></div></div></div></section>
+</main>
+
+<footer id="contact"><div class="wrap">
+<h2>Contact</h2>
+<p class="lead">Je cherche un stage PFE en cybersécurité. Écrivez-moi pour échanger sur un projet ou une opportunité.</p>
+<p class="big"><a href="mailto:azarg.hafssahe@gmail.com">azarg.hafssahe@gmail.com</a></p>
+<form id="cf" class="cf" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+<label for="n">Nom</label><input id="n" name="name" required autocomplete="name">
+<label for="e">E-mail</label><input id="e" name="email" type="email" required autocomplete="email">
+<label for="m">Message</label><textarea id="m" name="message" rows="5" required></textarea>
+<button class="btn p" type="submit">Envoyer le message</button>
+<p class="meta" id="cfs" role="status"></p>
+</form>
+<div class="btns">
+<a class="btn" href="https://linkedin.com/in/hafssa-azarg-138454320" target="_blank" rel="noopener">LinkedIn</a>
+<a class="btn" href="https://github.com/hafssa799" target="_blank" rel="noopener">GitHub</a>
+</div>
+</div></footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
